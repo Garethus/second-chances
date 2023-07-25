@@ -13,7 +13,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import store from "./utils/store";
 
-import Nav from './pages/Nav';
+import Nav from './components/Nav';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Login from './pages/Login';
