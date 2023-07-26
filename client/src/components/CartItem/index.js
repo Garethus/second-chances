@@ -1,13 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@mui/material';
+// import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@mui/material';
+import { Card, Image, Button, Header } from 'semantic-ui-react'
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const CartItem = ({ item , onUpdateCartQty}) => {
   const dispatch = useDispatch();
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const removeFromCart = item => {
     dispatch({
@@ -39,20 +40,20 @@ const CartItem = ({ item , onUpdateCartQty}) => {
   }
 
   return (
-    <Card className={classes.cartItem}>
-      <CardMedia image={`/images/${item.image}`} alt={item.name} className={classes.media} />
-      <CardContent className={classes.cardContent}>
-        <Typography variant="h5">{item.name}</Typography>
-        <Typography variant="h6">{item.price}</Typography>
-      </CardContent>
-      <CardActions className={classes.cardActions}>
-        <div className={classes.buttons}>
-          <Button type="button" size="small" onClick={[ item, item.purchaseQuantity - 1]}>-</Button>
-          <Typography>&nbsp;{item.purchaseQuantity}&nbsp;</Typography>
-          <Button type="button" size="small" onClick={[ item, item.purchaseQuantity + 1]}>+</Button>
+    <Card>
+      <Image src={`/images/${item.image}`} alt={item.name} wrapped ui={false} />
+      <Card.Content>
+        <Header as="h5">{item.name}</Header>
+        <Header as="h6">{item.price}</Header>
+      </Card.Content>
+      <Card.Content>
+        <div className='flex-row justify-content-center mb-3'>
+          <Button basic compact onChange={[ item, item.purchaseQuantity - 1]}> - </Button>
+          <Header as="h6">{item.purchaseQuantity}</Header>
+          <Button basic compact onChange={[ item, item.purchaseQuantity + 1]}> + </Button>
         </div>
-        <Button variant="contained" type="button" color="secondary" onClick={() => removeFromCart(item)}>Remove</Button>
-      </CardActions>
+        <Button color='orange' onClick={() => removeFromCart(item)}>Remove</Button>
+      </Card.Content>
     </Card>
   );
 }

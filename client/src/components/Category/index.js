@@ -46,9 +46,9 @@ function Category() {
 
         return (
             <div>
-                <h3 className= "mx-3">Choose a Brand</h3>
+                <h2 className= "my-3">Choose a Brand</h2>
                 {categories.map((item) => (
-                    <Button
+                    <Button size="large"
                     color='blue'
                      
                     key={item._id}

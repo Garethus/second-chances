@@ -51,18 +51,16 @@ export const reducers = (state = initialState, action) => {
         })
       };
 
-    // case 
-    
-    // :
-    //   let newState = state.cart.filter(product => {
-    //     return product._id !== action._id;
-    //   });
+    case REMOVE_FROM_CART:
+      let newState = state.cart.filter(product => {
+        return product._id !== action._id;
+      });
 
-    //   return {
-    //     ...state,
-    //     cartOpen: newState.length > 0,
-    //     cart: newState
-    //   };
+      return {
+        ...state,
+        cartOpen: newState.length > 0,
+        cart: newState
+      };
 
     case CLEAR_CART:
       return {

@@ -1,0 +1,15 @@
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: -10;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 7rem;
+}
+
+footer a{
+    color: black;
+    padding: 1rem;
+}
+

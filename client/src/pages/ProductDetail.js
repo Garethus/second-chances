@@ -3,7 +3,8 @@ import '../index.css'
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '@mui/material';
+import { Button } from 'semantic-ui-react'
+
 
 import Cart from '../components/Cart';
 import {
@@ -89,21 +90,21 @@ function ProductDetail() {
         <div className="container my-1">
           <Link to="/products">← Back to Products</Link>
 
-          <h2 className = "header-title">{currentProduct.name}</h2>
+          <h2 className="header-title">{currentProduct.name}</h2>
 
           <p>{currentProduct.description}</p>
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
-            <Button color='primary' variant="contained" onClick={addToCart}>Add to Cart</Button>
-            <Button
-              color='primary'
-              variant='contained'
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </Button>
+            <Button.Group>
+              <Button color="blue" onClick={addToCart}>Add to Cart</Button>
+              <Button.Or />
+              <Button color="blue" disabled={!cart.find((p) => p._id === currentProduct._id)}
+                onClick={removeFromCart}
+              >
+                Remove from Cart
+              </Button>
+            </Button.Group>
           </p>
 
           <img

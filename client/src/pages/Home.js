@@ -17,12 +17,12 @@ const Home = () => {
         style={myStyle}
       >
         <div className="py-2">
-          <h3>
+          <h1>
             Give old phones SECOND-CHANCES.
-          </h3>
-          <h3>
+          </h1>
+          <h2>
             It's good for your wallet and the environment.
-          </h3>
+          </h2>
         </div>
       </div>
     </main>

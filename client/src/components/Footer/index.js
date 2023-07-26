@@ -1,4 +1,5 @@
 import React from 'react';
+import './footer.css'
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 
 function Footer() {

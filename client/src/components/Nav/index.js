@@ -8,7 +8,7 @@ function Nav() {
 
     if (Auth.loggedIn()) {
       return (
-        <ol className="flex-row bullets">
+        <ol className="flex-row py-3">
           <li className="mx-3">
             <Link to="/products" style={{ textDecoration: 'none' }}>Products</Link>
           </li>
@@ -25,7 +25,7 @@ function Nav() {
       );
     } else {
       return (
-        <ol className="flex-row">
+        <ol className="flex-row py-3">
           <li className="mx-3">
             <Link to="/products" style={{ textDecoration: 'none' }}>Products</Link>
           </li>
@@ -42,14 +42,14 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <h3>
+      <h2>
         <Link to="/" className="mx-3" style={{ textDecoration: 'none' }}>
           <span role="img" aria-label="shopping bag">
             <FcMultipleSmartphones />
           </span>
           Second-Chances
         </Link>
-      </h3>
+      </h2>
 
       <nav>{showNavigation()}</nav>
     </header>

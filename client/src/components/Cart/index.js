@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
-import { Button, Typography } from '@mui/material';
+import { Button, Header } from 'semantic-ui-react'
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
-import { ShoppingCart } from '@mui/icons-material';
+import { FaCartShopping } from "react-icons/fa6";
 import { useDispatch, useSelector } from 'react-redux';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
@@ -67,7 +67,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span className="cart-img" role="img" aria-label="trash">
-          <ShoppingCart />
+          <FaCartShopping />
         </span>
       </div>
     );
@@ -75,7 +75,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <Button variant="contained" color="secondary" onClick={toggleCart}>Close</Button>
+      <Button color='orange' onClick={toggleCart}>Close</Button>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
         <div>
@@ -84,22 +84,19 @@ const Cart = () => {
           ))}
 
           <div className="flex-row space-between">
-            <Typography variant="h6">Total: ${calculateTotal()}</Typography>
+            <Header as="h6">Total: ${calculateTotal()}</Header>
 
             {Auth.loggedIn() ? (
-              <Button variant="contained" color='primary' onClick={submitCheckout}>Checkout</Button>
+              <Button color='orange' onClick={submitCheckout}>Checkout</Button>
             ) : (
               <span>(log in to check out)</span>
             )}
           </div>
         </div>
       ) : (
-        <Typography variant='h6'>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
+        <Header as='h6'>
           You haven't added anything to your cart yet!
-        </Typography>
+        </Header>
       )}
     </div>
   );

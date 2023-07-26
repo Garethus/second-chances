@@ -45,9 +45,9 @@ function ProductItem(item) {
         </Link>
         <Card.Content>
           <Card.Header>{name}</Card.Header>
-          <Card.Meta>
+          <Card.Description>
             <span className='date'>${price}</span>
-          </Card.Meta>
+          </Card.Description>
         </Card.Content>
         <Card.Content extra>
           <a href="#" onClick={addToCart}>

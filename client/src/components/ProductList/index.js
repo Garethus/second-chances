@@ -45,7 +45,7 @@ function ProductList() {
 
   return (
     <div className="my-2">
-      <h3 className= "mx-3">Our Products</h3>
+      <h2 className= "my-5">Our Products</h2>
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
