@@ -1,17 +1,31 @@
 import React from "react";
-// import Parallax from "../components/Parallax";
-// import ParallaxImg1 from "../assets/cover.jpg";
+import coverImg from "../assets/cover.jpg";
 
+const myStyle = {
+  backgroundImage: `url(${coverImg})`,
+  height: '100vh',
+  fontSize: '50px',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+};
 
 const Home = () => {
   return (
-    <div className="container">
-      {/* <Parallax image={ParallaxImg1}> */}
-        <h1 className="main-title">Second Chances</h1>
-        <p className="subtitle">Give old phones a second chance.</p>
-        <p className="subtitle">It's good for you wallet and the environment.</p>
-      {/* </Parallax> */}
-    </div>
+    <main>
+      <div
+        className="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style={myStyle}
+      >
+        <div className="py-2">
+          <h3>
+            Give old phones SECOND-CHANCES.
+          </h3>
+          <h3>
+            It's good for your wallet and the environment.
+          </h3>
+        </div>
+      </div>
+    </main>
   );
 };
 

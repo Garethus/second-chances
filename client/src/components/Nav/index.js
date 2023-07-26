@@ -8,12 +8,12 @@ function Nav() {
 
     if (Auth.loggedIn()) {
       return (
-        <ol className="flex-row bullets" style={{ listStyle: 'none' }}>
+        <ol className="flex-row bullets">
           <li className="mx-3">
-            <Link to="/products">Products</Link>
+            <Link to="/products" style={{ textDecoration: 'none' }}>Products</Link>
           </li>
           <li className="mx-3">
-            <Link to="/orderHistory">Order History</Link>
+            <Link to="/orderHistory" style={{ textDecoration: 'none' }}>Order History</Link>
           </li>
           <li className="mx-3">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -25,15 +25,15 @@ function Nav() {
       );
     } else {
       return (
-        <ol className="flex-row" style={{ listStyle: 'none' }}>
+        <ol className="flex-row">
           <li className="mx-3">
-            <Link to="/products">Products</Link>
+            <Link to="/products" style={{ textDecoration: 'none' }}>Products</Link>
           </li>
           <li className="mx-3">
-            <Link to="/signup">Signup</Link>
+            <Link to="/signup" style={{ textDecoration: 'none' }}>Signup</Link>
           </li>
           <li className="mx-3">
-            <Link to="/login">Login</Link>
+            <Link to="/login" style={{ textDecoration: 'none' }}>Login</Link>
           </li>
         </ol>
       );
@@ -42,14 +42,14 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
+      <h5>
+        <Link to="/" className="mx-3" style={{ textDecoration: 'none' }}>
           <span role="img" aria-label="shopping bag">
             <FcMultipleSmartphones />
           </span>
           Second-Chances
         </Link>
-      </h1>
+      </h5>
 
       <nav>{showNavigation()}</nav>
     </header>

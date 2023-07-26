@@ -141,7 +141,7 @@ db.once("open", async () => {
         name: "Google Pixel 4a",
         description:
           "128GB Black - Refurbished - As New",
-        image: "samsung_galaxy-a52s.png",
+        image: "google_pixel-4a.png",
         category: categories[2]._id,
         price: 419,
         quantity: 1
@@ -150,7 +150,7 @@ db.once("open", async () => {
         name: "Oppo Find X3 Pro",
         description:
           "12/256GB - 50MP - Black - Refurbished - As New",
-        image: "samsung_galaxy-a52s.png",
+        image: "oppo_find-x3pro.png",
         category: categories[2]._id,
         price: 488,
         quantity: 1
