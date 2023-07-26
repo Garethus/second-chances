@@ -6,13 +6,11 @@ import {
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY 
  } from "../../utils/actions";
- import { idbPromise } from '../../utils/helpers'
-import { Button } from "@mui/material";
-import useStyles from './styles';
+import { idbPromise } from '../../utils/helpers'
+import { Button } from 'semantic-ui-react'
 
 function Category() {
     const dispatch = useDispatch();
-    const classes = useStyles();
     const state = useSelector((state) => state);
 
     const { categories } = state;
@@ -45,13 +43,13 @@ function Category() {
             });
         };
 
+
         return (
             <div>
-                <h3 className= "mx-3">Choose an item</h3>
+                <h3 className= "mx-3">Choose a Brand</h3>
                 {categories.map((item) => (
                     <Button
-                    className={classes.buttons}
-                    variant="contained"
+                    color='blue'
                      
                     key={item._id}
                     onClick={() => {

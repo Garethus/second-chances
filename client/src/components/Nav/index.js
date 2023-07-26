@@ -42,14 +42,14 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <h5>
+      <h3>
         <Link to="/" className="mx-3" style={{ textDecoration: 'none' }}>
           <span role="img" aria-label="shopping bag">
             <FcMultipleSmartphones />
           </span>
           Second-Chances
         </Link>
-      </h5>
+      </h3>
 
       <nav>{showNavigation()}</nav>
     </header>

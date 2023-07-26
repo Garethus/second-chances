@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Provider } from "react-redux";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import 'semantic-ui-css/semantic.min.css'
 
 import store from "./utils/store";
 
