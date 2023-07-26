@@ -7,7 +7,7 @@ import {
     UPDATE_CURRENT_CATEGORY 
  } from "../../utils/actions";
  import { idbPromise } from '../../utils/helpers'
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import useStyles from './styles';
 
 function Category() {
