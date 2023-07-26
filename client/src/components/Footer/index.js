@@ -4,20 +4,11 @@ import React from 'react';
 function Footer() {
     return (
         <footer>
-            <div className="container text-center mb-5">
-                <h4>
-                    Made with{' '}
-                    <span
-                        className="emoji"
-                        role="img"
-                        aria-label="heart"
-                        aria-hidden="false"
-                    >
-                        ❤️
-                    </span>{' '}
-                    by the Tech Thoughts team.
-                </h4>
-            </div>
+           <div className='footer__socials'>
+                <a href='https://github.com/Garethus'><AiFillGithub /></a>
+                <a href='https://www.linkedin.com/in/grethel-mae-reyes-81549516b/'><AiFillLinkedin /></a>
+                <a href='https://twitter.com/IamGaretThus'><AiFillTwitterCircle /></a>
+           </div>
         </footer>
     )
 }
