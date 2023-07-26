@@ -1,14 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-// import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@mui/material';
 import { Card, Image, Button, Header } from 'semantic-ui-react'
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-// import useStyles from './styles';
 
 const CartItem = ({ item , onUpdateCartQty}) => {
   const dispatch = useDispatch();
-  // const classes = useStyles();
 
   const removeFromCart = item => {
     dispatch({
