@@ -108,7 +108,7 @@ function ProductDetail() {
           </p>
 
           <img
-            src={`/images/${currentProduct.image}`}
+            src={require(`../assets/${currentProduct.image}`)}
             alt={currentProduct.name}
           />
         </div>

@@ -38,7 +38,7 @@ const CartItem = ({ item , onUpdateCartQty}) => {
 
   return (
     <Card>
-      <Image src={`/images/${item.image}`} alt={item.name} wrapped ui={false} />
+      <Image src={require(`../../assets/${item.image}`)} alt={item.name} wrapped ui={false} />
       <Card.Content>
         <Header as="h5">{item.name}</Header>
         <Header as="h6">{item.price}</Header>

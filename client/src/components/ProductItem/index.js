@@ -41,7 +41,7 @@ function ProductItem(item) {
     <div>
       <Card>
         <Link to={`/products/${_id}`}>
-          <Image src={`/images/${item.image}`} title={name} wrapped ui={false} />
+          <Image src={require(`../../assets/${item.image}`)} title={name} wrapped ui={false} />
         </Link>
         <Card.Content>
           <Card.Header>{name}</Card.Header>
