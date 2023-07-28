@@ -19,13 +19,13 @@ db.once("open", async () => {
   await Product.deleteMany();
 
   // Add drink items to the collection and await the results
-  await Product.insertMany([
+  const products = await Product.insertMany([
     {
         name: "Iphone SE (3rd Gen)",
         description:
           "128GB Starlight - Refurbished - As New",
         image: "iphone_se-3rdgen.png",
-        category: "Apple",
+        category: categories[0]._id,
         price: 568,
         quantity: 1
     },
@@ -34,7 +34,7 @@ db.once("open", async () => {
         description:
           "128GB Silver - Excellent - Refurbished",
         image: "iphone_12-promax.png",
-        category: "Apple",
+        category: categories[0]._id,
         price: 1068,
         quantity: 1
     },    
@@ -43,7 +43,7 @@ db.once("open", async () => {
         description:
           "64GB White - Refurbished - As New",
         image: "iphone_xr.png",
-        category: "Apple",
+        category: categories[0]._id,
         price: 435,
         quantity: 1
     },    
@@ -52,7 +52,7 @@ db.once("open", async () => {
         description:
           "64GB Gold - Very Good - Refurbished with New Battery",
         image: "iphone_8.png",
-        category: "Apple",
+        category: categories[0]._id,
         price: 249,
         quantity: 1
     },    
@@ -61,7 +61,7 @@ db.once("open", async () => {
         description:
           "256GB Pink - Excellent - Refurbished",
         image: "iphone_13-mini.png",
-        category: "Apple",
+        category: categories[0]._id,
         price: 899,
         quantity: 1
     },
@@ -70,7 +70,7 @@ db.once("open", async () => {
         description:
           "128GB/12GB - 64MP - VF - Black",
         image: "samsung_galaxy-s20.png",
-        category: "Samsung",
+        category: categories[1]._id,
         price: 799,
         quantity: 1
     }, 
@@ -79,7 +79,7 @@ db.once("open", async () => {
         description:
           "128GB Phantom Violet - Refurbished - As New",
         image: "samsung_galaxy-s21.png",
-        category: "Samsung",
+        category: categories[1]._id,
         price: 999,
         quantity: 1
     }, 
@@ -88,7 +88,7 @@ db.once("open", async () => {
         description:
           "Dual Sim - 6.8\"",
         image: "samsung_galaxy-s23.png",
-        category: "Samsung",
+        category: categories[1]._id,
         price: 2599,
         quantity: 1
     }, 
@@ -97,7 +97,7 @@ db.once("open", async () => {
         description:
           "128GB White - Refurbished - As New",
         image: "samsung_galaxy-a52s.png",
-        category: "Samsung",
+        category: categories[1]._id,
         price: 419,
         quantity: 1
     }, 
@@ -106,7 +106,7 @@ db.once("open", async () => {
         description:
           "Dual Sim - 6.6 inches - SM-S906",
         image: "samsung_galaxy-s22.png",
-        category: "Samsung",
+        category: categories[1]._id,
         price: 1199,
         quantity: 1
     },
@@ -115,7 +115,7 @@ db.once("open", async () => {
         description:
           "3GB RAM - 32GB ROM - Black - Refurbished - As New",
         image: "xiaomi_mi-note.png",
-        category: "Others",
+        category: categories[2]._id,
         price: 122,
         quantity: 1
     },
@@ -124,7 +124,7 @@ db.once("open", async () => {
         description:
           "3GB RAM - 32GB ROM - Gold - Refurbished - As New",
         image: "xiaomi_mi-4x.png",
-        category: "Others",
+        category: categories[2]._id,
         price: 112,
         quantity: 1
     }, 
@@ -133,7 +133,7 @@ db.once("open", async () => {
         description:
           "16GB/256GB - Black - Refurbished - As New",
         image: "asus_rog-phone5.png",
-        category: "Others",
+        category: categories[2]._id,
         price: 747,
         quantity: 1
     }, 
@@ -142,7 +142,7 @@ db.once("open", async () => {
         description:
           "128GB Black - Refurbished - As New",
         image: "google_pixel-4a.png",
-        category: "Others",
+        category: categories[2]._id,
         price: 419,
         quantity: 1
     }, 
@@ -151,7 +151,7 @@ db.once("open", async () => {
         description:
           "12/256GB - 50MP - Black - Refurbished - As New",
         image: "oppo_find-x3pro.png",
-        category: "Others",
+        category: categories[2]._id,
         price: 488,
         quantity: 1
     } 
@@ -169,7 +169,12 @@ db.once("open", async () => {
         firstName: "Grethel",
         lastName: "Reyes",
         email: "grethel.r@gmail.com",
-        password: "password01"
+        password: "password01",
+        orders: [
+          {
+            products: [products[0]._id, products[0]._id, products[1]._id],
+          },
+        ],
     },
     {
         firstName: "Mark",
