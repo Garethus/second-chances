@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { Button, Header } from 'semantic-ui-react'
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -11,20 +10,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
-const stripePromise = loadStripe('');
-
 const Cart = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
 
   useEffect(() => {
     async function getCart() {
